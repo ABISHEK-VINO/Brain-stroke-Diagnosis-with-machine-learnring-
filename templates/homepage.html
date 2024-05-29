@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Stroke</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+   <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+   
+    <!-- Inline CSS -->
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+        .navbar {
+            padding: 10px;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-item {
+            margin-right: 10px;
+        }
+
+        .section_one img {
+            padding-top: 50px;
+            /* Adjust top padding for the image */
+        }
+
+        .section_one h3 {
+            padding-top: 65px;
+        }
+
+        .section_one {
+            text-align: center;
+            /* Center align for all screen sizes */
+            background-color: whitesmoke;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            /* Display columns in mobile view */
+        }
+
+        .col {
+            width: 100%;
+        }
+
+        .text-container {
+            padding-top: 20px;
+            /* Add padding to top of text container */
+        }
+
+        /* For mobile view */
+        @media (max-width: 767px) {
+            .text-container {
+                padding-top: 40px;
+                /* Increase padding for mobile view */
+            }
+        }
+
+        /* For tablet and larger screens */
+        @media (min-width: 768px) {
+            .row {
+                flex-direction: row;
+                /* Display rows for larger screens */
+                justify-content: center;
+                /* Center align items horizontally */
+                align-items: center;
+                /* Center align items vertically */
+            }
+
+            .col {
+                width: auto;
+                /* Reset width to auto */
+                flex: 1;
+                /* Take equal width within the row */
+            }
+
+            .text-container {
+                padding-top: 100px;
+                /* Adjust padding for tablet and larger screens */
+                text-align: center;
+                /* Center align text */
+            }
+        }
+
+        .headsug {
+            background-color: steelblue;
+            padding: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        .section_two {
+            background-color: whitesmoke;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .section_two img {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            padding: -45px;
+        }
+
+        .third_section {
+            background-color: whitesmoke;
+            padding-top: 30px;
+            padding-bottom: 10px;
+        }
+
+        .section_one p {
+            text-align: justify;
+            background-color: white;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .section_one h3 {
+            text-decoration: underline;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            animation: moveDown 1.5s forwards;
+        }
+
+        @keyframes moveDown {
+            0% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .section_two p {
+            text-align: justify;
+        }
+
+        .third_section p {
+            text-align: justify;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        .third_section h6 {
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 5px;
+            text-align: justify;
+        }
+
+        .footer_section {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            background: #2d3748;
+        }
+
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            text-decoration: none;
+        }
+
+        /* Add animation for sliding in from the right */
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Apply animation to the image */
+        .animate-right {
+            animation: slideInRight 1.5s ease-out;
+        }
+
+        .section_two {
+            background: royalblue;
+            padding-top: 60px;
+            padding-bottom: 20px;
+        }
+        
+         /* CSS for white text color and horizontal line */
+    #suggest h3 {
+        color: white; /* Change text color to white */
+        position: relative;
+    }
+
+    #suggest h3::before {
+        content: '';
+        position: absolute;
+        bottom: -10px; /* Adjust position of the line */
+        left: 0;
+        width: 100%;
+        height: 2px; /* Adjust thickness of the line */
+        background-color: white; /* Change line color to white */
+    }
+    </style>
+    <!-- Inline CSS -->
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="homepage.html"> <h5>
+                Brain Stroke Detection </h5></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between flex-grow-0" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="#" href="/"><i class="bi bi-house-door"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#suggest"><i class="bi bi-lightbulb"></i> Suggestion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="" href="{{url_for('hospital')}}"><i class="bi bi-hospital"></i> Hospital List</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 10px;">
+                        <a class="nav-link active" aria-current="" href="{{url_for('bmi')}}"><i class="bi bi-calculator"></i> Calculate BMI</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="" href="{{url_for('contact')}}"><i class="bi bi-telephone"></i> Contact Us</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{url_for('result')}}"><i class="bi bi-file-earmark-medical"></i> Detect Stroke</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Your other HTML content goes here -->
+    <section class="section_one">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3>Brain Stroke Detection</h3>
+                    <p class="card">A brain stroke is a medical emergency where blood flow to a part of the brain is interrupted or reduced, leading to brain tissue damage. It can cause sudden numbness or weakness, confusion, difficulty speaking or understanding speech, and other symptoms. Prompt medical attention is crucial to minimize damage and improve outcomes.</p>
+                    <div class="text-center">
+                        <a href="{{url_for('result')}}" class="btn btn-primary bi bi-file-earmark-medical"> Let's Detect Stroke</a>
+                    </div>
+                </div>
+                <div class="col animate-right">
+                    <img src="../static/img/img1.png" alt="" width="100%" class="animate-right">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- suggestion start -->
+   
+   <!-- suggestion start -->
+<section id="suggest" class="section_two">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="text-center mb-4">Suggestions to Prevent Stroke</h3>
+            </div>
+        </div>
+        <div class="row">
+            <!-- First row of cards -->
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">Regular Exercise</h5>
+                    <hr class="my-3">
+                    <p class="card-text">Engage in regular physical activity such as brisk walking, swimming, or cycling for at least 30 minutes most days of the week to improve blood circulation and reduce the risk of stroke.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">Healthy Diet</h5>
+                    <hr class="my-3">
+                    <p class="card-text">Follow a diet rich in fruits, vegetables, whole grains, and lean proteins. Limit saturated fats, trans fats, cholesterol, sodium, and added sugars for heart and vessel health.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">Manage Blood Pressure</h5>
+                    <hr class="my-3">
+                    <p class="card-text">Manage high blood pressure through lifestyle changes like a healthy diet, regular exercise, stress management, and prescribed medications.</p>
+                </div>
+            </div>
+            <!-- Second row of cards -->
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">Quit Smoking</h5>
+                    <hr class="my-3">
+                    <p class="card-text">Stop smoking and avoid exposure to secondhand smoke to reduce the risk of stroke. Smoking damages blood vessels and increases the likelihood of blood clots.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">Limit Alcohol Consumption</h5>
+                    <hr class="my-3">
+                    <p class="card-text">If you consume alcohol, do so in moderation. Excessive alcohol consumption can raise blood pressure and increase the risk of stroke and other cardiovascular diseases.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">Maintain a Healthy Weight</h5>
+                    <hr class="my-3">
+                    <p class="card-text">Maintain healthy weight with balanced diet and exercise. Excess weight links to high blood pressure, diabetes, and high cholesterol, raising stroke risk.</p>
+                </div>
+            </div>
+            <!-- Third row of cards -->
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">Manage Diabetes</h5>
+                    <hr class="my-3">
+                    <p class="card-text">Control blood sugar levels via healthy diet, exercise, glucose monitoring, and prescribed meds. Follow healthcare provider's guidance for optimal management.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">Get Quality Sleep</h5>
+                    <hr class="my-3">
+                    <p class="card-text">Prioritize quality sleep with regular schedule, cozy environment, and relaxation techniques. Poor sleep escalates high blood pressure and other stroke risks</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">Manage Stress</h5>
+                    <hr class="my-3">
+                    <p class="card-text">Manage stress with exercise, relaxation, hobbies, socializing, and support from loved ones or professionals. Chronic stress can elevate blood pressure and stroke risks.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end suggestion start -->
+
+    
+
+
+    
+
+    <!-- footer start -->
+    <section class="footer_section">
+        <div class="container-fluid">
+            <footer class=" text-white py-5">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3 mb-4">
+                            <h3 class="text-lg font-weight-bold mb-3">About Us</h3>
+                            <p class="text-justify">"Dedicated to nurturing talent and fostering innovation, Akash SkillSet Academy is where dreams take flight and aspirations become reality."</p>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <h3 class="text-lg font-weight-bold mb-3">Quick Links</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#home" class="text-white">Home</a></li>
+                                <li><a href="about.html" class="text-white">About</a></li>
+                                <li><a href="predict_form.html" class="text-white">Detect Stroke</a></li>
+                                <li><a href="bmi.html" class="text-white">Calculate BMI</a></li>
+                                <li><a href="contact.html" class="text-white">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <h3 class="text-lg font-weight-bold mb-3">Follow Us</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="text-white">Facebook</a></li>
+                                <li><a href="#" class="text-white">Twitter</a></li>
+                                <li><a href="#" class="text-white">Instagram</a></li>
+                                <li><a href="#" class="text-white">LinkedIn</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h3 class="text-lg font-weight-bold mb-3">Contact Us</h3>
+                            <p>Kazhipattur, Tamil Nadu, Chennai -603103</p>
+                            <p>Email: stroke@.com</p>
+                            <p>Phone: +123 456 7890</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top border-light mt-4 pt-4 text-center">
+                    <p>&copy; 2024 Brain Stroke Detection - All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </section>
+<!-- card slide script jas -->
+
+
+<!-- card slide script jas -->
+
+    <!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Bootstrap 5 JS bundle (required) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

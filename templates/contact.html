@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+
+    <link rel="stylesheet" href="conact.css" />
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS Link -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" /> -->
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+        .navbar-brand{
+            margin-left: -100px;
+        }
+        #navbarNav{
+            gap:200px;
+            text-size-adjust: 10px;
+            color: #0d6efd;
+        }
+        .AKASH {
+            background-color: whitesmoke;
+        }
+
+        .footer-section {
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 19px;
+        }
+
+        /* Border effect on hover */
+        .form-input:hover {
+            border-color: #0d6efd;
+            /* Bootstrap primary color */
+        }
+
+        /* Apply border radius to form container */
+        .form-container {
+            border-radius: 10px;
+        }
+
+        /* Apply border radius to image */
+        .contact-img {
+            border-radius: 10px;
+        }
+       
+
+        /* Animation for left card */
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Animation for right card */
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Apply animation to left card */
+        .animate-left {
+            animation: slideInLeft 1.4s ease-out;
+        }
+
+        /* Apply animation to right card */
+        .animate-right {
+            animation: slideInRight 1.4s ease-out;
+        }
+
+        /* Custom padding for h1 */
+        .custom-padding {
+            padding-top: 50px;
+            /* Adjust as needed */
+        }
+
+        /* Underline for h1 */
+        .small-underline {
+            border-bottom: 1px solid #0d6efd;
+            /* Bootstrap primary color */
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .contact_page {
+            background-color: whitesmoke;
+        }
+
+        .navbar {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+        <div class="container-fluid"> <!-- Changed container to container-fluid -->
+            <a class="navbar-brand" href="#" style="padding-left: 100px;">Brain Stroke Detection</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav"> <!-- Added justify-content-end -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="/" href="/">
+                            <i class="bi bi-house-door"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="" href="{{url_for('hospital')}}" target="_blank"><i
+                                class="bi bi-hospital"></i> Hospital List</a>
+                    </li>
+                    
+                    <li class="nav-item" style="margin-right: 10px;">
+                        <a class="nav-link active" aria-current="" href="{{url_for('bmi')}}">
+                            <i class="bi bi-calculator"></i> Calculate BMI
+                        </a>
+                    </li>
+    
+                
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="" href="/contact"><i class="bi bi-telephone"></i>
+                            Contact Us </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Navbar -->
+
+    <section class="contact_page">
+        <div class="container py-5">
+            <h1 class="text-3xl font-semibold text-center mb-4 font-poppins custom-padding">
+                <span class="small-underline">Contact Us</span>
+            </h1>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-5 mb-4 mb-md-0 animate-left">
+                    <img src="../static/img/contact-removebg.png" alt="Contact" class="img-fluid contact-img" id="image"/>
+                </div>
+                <div class="col-md-4 animate-right">
+                    <div class="container bg-white rounded-lg shadow p-4 form-container">
+
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="c78a11fe-7619-4b94-8104-1f7da86053cd">
+                            <div class="mb-3">
+                                <label for="name" class="form-label text-gray-700 font-bold">Name</label>
+                                <input type="text" id="name" name="name"
+                                    class="form-control rounded-lg transition duration-300 form-input"
+                                    placeholder="Your Name" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label text-gray-700 font-bold">Email</label>
+                                <input type="email" id="email" name="email"
+                                    class="form-control rounded-lg transition duration-300 form-input"
+                                    placeholder="Your Email" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label text-gray-700 font-bold">Message</label>
+                                <textarea id="message" name="message" rows="6"
+                                    class="form-control rounded-lg transition duration-300 form-input form-textarea"
+                                    placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <button type="submit" class="btn btn-primary rounded-full transition duration-300">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-gray-200">
+        <footer class="bg-gray-800 py-3 text-center text-white">
+            <div class="container mx-auto">
+                <p>&copy; 2024 Brain Stroke Detection - All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document
+            .getElementById("contact-form")
+            .addEventListener("submit", function (event) {
+                event.preventDefault();
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var message = document.getElementById("message").value;
+
+                // Simulate sending the message (replace this with your actual code for sending message)
+                setTimeout(function () {
+                    document.getElementById("response").innerHTML =
+                        "<p>Message sent successfully!</p>";
+                }, 1000);
+            });
+    </script>
+</body>
+
+</html>

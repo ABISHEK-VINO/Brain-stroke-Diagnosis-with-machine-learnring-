@@ -1,0 +1,357 @@
+<html lang="en">
+    <head>
+        <title>BMI Calculator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Google Font-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+        <!--Google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+        <!--Bootstrap-->
+        
+        <!-- Bootstrap Icons -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+                
+        <!--Stylesheet-->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+            
+            /* Navigation bar */
+            .nav-bar-image {
+                width: 8%;
+            }
+        
+            .navbar-brand {
+                font-family: "Poppins", sans-serif;
+                font-size: 1.3rem;
+            }
+        
+            .nav-link {
+                font-size: 1rem; /* Adjust the font size as needed */
+                font-family: "Poppins", sans-serif;
+            }
+            /* nav bar end */
+        
+            *,
+            *:before,
+            *:after {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+        
+            body {
+                height: 100vh;
+                font-family: 'Montserrat', sans-serif;
+                /*background-color: #2398f2;*/
+                background-color: #44cfd4;
+                /*background: #046db9;*/
+            }
+        
+            .container {
+                background-color: #9aebf9;
+                padding: 30px 30px;
+                width: 1000px;
+                height: 480px;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 57%;
+                margin-left: 50%;
+                margin-right: auto;
+                box-shadow: 25px 25px 30px rgba(0, 0, 0, 0.15);
+                padding: 0;
+            }
+        
+            .container-one {
+                width: 500px;
+            }
+        
+            .container-two {
+                width: 500px;
+                padding-left: 70px;
+                padding-right: 70px;
+            }
+        
+            .container-one img {
+                height: 408px;
+                margin-left: 0;
+                bottom: 0;
+            }
+        
+            h1 {
+                background-color: #9f241b;
+                color: white;
+                text-align: center;
+                font-size: 23px;
+                letter-spacing: 1px;
+                margin-top: 0px;
+                padding-top: 18px;
+                padding-bottom: 18px;
+                margin-left: 0px;
+            }
+        
+            span {
+                font-weight: 500;
+                width: 50px;
+                padding-left: 6px;
+                line-height: 250%;
+            }
+        
+            input[type="range"] {
+                width: 80%;
+                height: 3.5px;
+                -webkit-appearance: none;
+                appearance: none;
+                background-color: #000000;
+                border-radius: 3px;
+                outline: none;
+            }
+        
+            input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                height: 15px;
+                width: 15px;
+                background-color: #9f241b;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+        
+            #result {
+                font-size: 35px;
+                letter-spacing: 1px;
+                text-align: center;
+                color: #7DCE13;
+                padding-top: 15px;
+            }
+        
+            #category {
+                font-size: 18px;
+                text-align: center;
+                letter-spacing: 1px;
+                padding-bottom: 22px;
+                color: white;
+            }
+        
+            .display {
+                margin-bottom: 60px;
+                margin-top: 70px;
+                background-color: rgb(67, 67, 65);
+                border-radius: 10px;
+            }
+        
+            @media (max-width: 500px) {
+                .img-fluid {
+                    display: none;
+                }
+        
+                .py-2 {
+                    display: flex;
+                }
+        
+                .py-5 {
+                    padding-top: 0rem !important;
+                }
+        
+                .navbar {
+                    padding-bottom: 0rem;
+                    padding-top: 0.7rem;
+                    padding-left: 0.7rem;
+                    padding-right: 0.7rem;
+                }
+        
+                .navbar-brand {
+                    width: 60%;
+                    font-family: 'Ubuntu', sans-serif;
+                    font-size: 1.3rem;
+                }
+        
+                .navbar-light .navbar-nav .nav-link {
+                    text-align: center;
+                    color: rgba(0, 0, 0, .55);
+                }
+        
+                .nav-link {
+                    display: block;
+                    padding: 0.5rem 1rem;
+                    color: #0d6efd;
+                    text-decoration: none;
+                    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+                }
+        
+                .nav-bar-image {
+                    width: 20%;
+                }
+        
+                h1 {
+                    background-color: #9f241b;
+                    color: white;
+                    text-align: center;
+                    font-size: 23px;
+                    letter-spacing: 1px;
+                    margin-top: 0px;
+                    padding-top: 28px;
+                    padding-bottom: 20px;
+                    margin-left: 0px;
+                }
+        
+                .container {
+                    width: 100%;
+                    height: 418px;
+                    top: 53%;
+                }
+        
+                .container-one {
+                    width: 0px;
+                }
+        
+                .display {
+                    margin-bottom: 60px;
+                    margin-top: 2rem;
+                    background-color: rgb(67, 67, 65);
+                    border-radius: 10px;
+                }
+        
+                .container-two {
+                    width: 500px;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                }
+            }
+        
+            .container {
+                margin-top: -50px;
+            }
+
+          
+        </style>
+        
+    </head>
+    <body>
+
+        <!-- Nav Bar -->
+           <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="homepage.html">Brain Stroke Detection</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" style="margin-right: -10px;"> <!-- Added negative margin to counteract the margin-right of the last item -->
+                    <li class="nav-item" style="margin-right: 10px;">
+                        <a class="nav-link active" aria-current="#" href="/"><i class="bi bi-house-door"></i>
+                            Home</a>
+                    </li>
+                    
+                    <li class="nav-item" style="margin-right: 10px;">
+                        <a class="nav-link active" aria-current="" href="{{url_for('hospital')}}" target="_blank"><i
+                                class="bi bi-hospital"></i> Hospital List</a>
+                    </li>
+
+                    <li class="nav-item" style="margin-right: 10px;">
+                        <a class="nav-link active" aria-current="" href="/bmi">
+                            <i class="bi bi-calculator"></i> Calculate BMI
+                        </a>
+                    </li>
+                    
+
+                
+                    <li class="nav-item" style="margin-right: 10px;">
+                        <a class="nav-link active" aria-current="" href="{{url_for('contact')}}"><i class="bi bi-telephone"></i>
+                            Contact Us </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <!-- End Navbar -->
+        
+        <br>
+        <div class="container row">
+            <h1>BMI Calculator</h1>
+            <div class="container-one col-lg-6"> 
+
+                <img src="./static/img/bmi.png" class="img-fluid" alt="bmi image" style="vertical-align: bottom;">
+                
+            </div>
+            <div class="container-two col-lg-6">
+
+                <div class="display">
+                            <p id="result" class="fw-bold" >20.0</p>
+                            <p id="category">Normal weight</p>
+                </div>
+
+                <input type="range" min="20" max="200" value="20" id="weight" oninput="calculate()">
+                <span id="weight-val"class="fw-bold">20 kg</span>
+                
+                <input type="range" min="100" max="250" value="100" id="height" oninput="calculate()">
+                <span id="height-val" class="fw-bold">100 cm</span>
+            </div>
+        </div>
+    
+
+        
+
+
+        <!--Script-->
+        <script>function calculate(){
+            //Need to determine the constant of some id functions.
+              var bmi;
+              var result = document.getElementById("result");
+            //The value of the height slider
+              var height = parseInt(document.getElementById("height").value);
+            //The value of the weight slider
+              var weight = parseInt(document.getElementById("weight").value);
+            
+            //The value of height and width should be displayed in the webpage using "textContent".
+              document.getElementById("weight-val").textContent = weight + " kg";
+              document.getElementById("height-val").textContent = height + " cm";
+             
+            //Now I have added the formula for calculating BMI in "bmi"
+              bmi = (weight / Math.pow( (height/100), 2 )).toFixed(1);
+            //With the help of "textContent" we have arranged to display in the result page of BMI
+              result.textContent = bmi;
+          
+            
+            //Now we have to make arrangements to show the text
+            
+            
+            //When the BMI is less than 18.5, you can see the text below
+              if(bmi < 18.5){
+                  category = "Underweight 😒";
+                  result.style.color = "#ffc44d";
+              }
+            
+            //If BMI is >=18.5 and <=24.9
+              else if( bmi >= 18.5 && bmi <= 24.9 ){
+                  category = "Normal Weight 😍";
+                  result.style.color = "#7DCE13";
+              }
+            
+            //If BMI is >= 25 and <= 29.9 
+              else if( bmi >= 25 && bmi <= 29.9 ){
+                  category = "Overweight 😮";
+                  result.style.color = "#ff884d";
+              }
+            
+            //If BMI is <= 30
+              else{
+                  category = "Obese 😱";
+                  result.style.color = "#ff5e57";
+              }
+            //All of the above text is stored in "category".
+          
+          //Now you have to make arrangements to display the information in the webpage with the help of "textContent"
+              document.getElementById("category").textContent = category;
+          }</script>
+    </body>
+    </html>
+    
